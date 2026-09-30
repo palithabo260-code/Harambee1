@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reThink our music - Official Release Countdown</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandRed: '#e30613',
+            brandDarkRed: '#a8020a',
+            brandBlack: '#0a0a0c',
+            brandCardBg: '#141418',
+          },
+          fontFamily: {
+            montserrat: ['Montserrat', 'sans-serif'],
+            space: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #070709;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Vinyl Record Spinning Effect */
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spinSlow 18s linear infinite;
+    }
+
+    /* Glows and Highlights */
+    .red-glow {
+      box-shadow: 0 0 35px rgba(227, 6, 19, 0.45);
+    }
+    .red-text-glow {
+      text-shadow: 0 0 15px rgba(227, 6, 19, 0.7);
+    }
+    .glass-card {
+      background: rgba(20, 20, 24, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Vinyl Grooves texture */
+    .vinyl-grooves {
+      background: repeating-radial-gradient(
+        circle at center,
+        #111 0px,
+        #111 2px,
+        #222 3px,
+        #111 4px
+      );
+    }
+
+
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden text-slate-100">
+
+  <!-- HEADER & NAVBAR -->
+  <header class="w-full bg-black/90 border-b border-white/10 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo Branding -->
+      <div class="flex items-center gap-3">
+        <div class="relative w-10 h-10 rounded-full bg-brandRed flex items-center justify-center font-black text-white text-xl tracking-tighter shadow-lg shadow-brandRed/40">
+          <i class="fa-solid fa-compact-disc text-2xl text-white"></i>
+        </div>
+        <div>
+          <span class="text-2xl font-black tracking-tight text-white uppercase font-space">
+            re<span class="text-brandRed">Think</span>
+          </span>
+          <span class="block text-[10px] text-gray-400 font-semibold tracking-widest -mt-1 uppercase">our music • by Harambee</span>
+        </div>
+      </div>
+
+      <!-- Domain Link -->
+      <a href="https://www.rethinkmusic.africa" target="_blank" class="hidden sm:flex items-center gap-2 bg-brandRed/20 hover:bg-brandRed/40 border border-brandRed/40 px-4 py-1.5 rounded-full text-xs font-bold text-red-200 transition-all duration-300">
+        <i class="fa-solid fa-globe"></i> rethinkmusic.africa
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN HERO BANNER SECTION -->
+  <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8 flex flex-col items-center justify-center">
+    
+    <!-- Hero Banner Wrapper -->
+    <div class="w-full rounded-3xl overflow-hidden glass-card border border-white/10 relative shadow-2xl mb-10">
+      
+      <!-- Ambient Background Red Glow -->
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-brandRed/30 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-brandRed/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 md:p-10 items-center relative z-10">
+        
+        <!-- Left Vinyl Illustration / Artwork -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+          <div class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 group">
+            
+            <!-- Spinning Vinyl Disk -->
+            <div id="vinylDisk" class="absolute inset-0 rounded-full vinyl-grooves border-4 border-zinc-800 flex items-center justify-center shadow-2xl transition-transform duration-700 animate-spin-slow">
+              <!-- Center Label -->
+              <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-brandRed border-4 border-black flex flex-col items-center justify-center p-2 text-center text-white shadow-inner">
+                <i class="fa-solid fa-record-vinyl text-2xl text-black/80 mb-1"></i>
+                <span class="text-[10px] font-black uppercase tracking-wider leading-tight">reThink</span>
+                <span class="text-[8px] font-bold text-black/90 tracking-tighter">OUR MUSIC</span>
+              </div>
+            </div>
+
+            <!-- Foreground Mask Icon Accent -->
+            <div class="absolute -bottom-2 -right-2 bg-black/90 p-3 rounded-2xl border border-white/10 shadow-xl">
+              <span class="text-xs font-bold text-gray-300 flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+                Official Release
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content & Copy -->
+        <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brandRed/20 border border-brandRed/40 text-brandRed font-bold text-xs uppercase tracking-widest">
+            <i class="fa-solid fa-bolt"></i> Upcoming Harambee Release
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white uppercase leading-none font-space">
+            Don't just release your music. <span class="text-brandRed red-text-glow">Own it. Sell it.</span> Get paid for it.
+          </h1>
+
+          <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-xl font-medium">
+            A platform built for Basotho artists, connecting your sound to listeners in Lesotho and around the world, while giving you a real opportunity to earn from your music.
+          </p>
+
+          <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-semibold text-gray-400">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brandRed"></i> Direct Artist Payouts</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brandRed"></i> Lesotho & Global Reach</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brandRed"></i> Exclusive Rights</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COUNTDOWN / RELEASED DISPLAY CARD -->
+    <div class="w-full glass-card rounded-3xl p-6 sm:p-10 border border-brandRed/30 red-glow text-center relative overflow-hidden mb-10">
+      
+      <!-- Top Status Header -->
+      <div class="mb-6">
+        <h2 id="countdownHeading" class="text-xs sm:text-sm font-black uppercase tracking-widest text-brandRed mb-1">
+          ⏳ COUNTDOWN TO OFFICIAL DROP
+        </h2>
+        <p id="targetSubtext" class="text-gray-400 text-xs sm:text-sm font-medium">
+          Counting down to <span class="text-white font-bold">1 November 00:00:00 (SAST / Maseru)</span>
+        </p>
+      </div>
+
+      <!-- COUNTDOWN TIMER GRID -->
+      <div id="timerContainer" class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto my-4">
+        <!-- Days -->
+        <div class="bg-black/70 border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center">
+          <span id="days" class="text-3xl sm:text-5xl font-black font-space text-white red-text-glow">00</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 font-bold mt-2">Days</span>
+        </div>
+
+        <!-- Hours -->
+        <div class="bg-black/70 border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center">
+          <span id="hours" class="text-3xl sm:text-5xl font-black font-space text-white red-text-glow">00</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 font-bold mt-2">Hours</span>
+        </div>
+
+        <!-- Minutes -->
+        <div class="bg-black/70 border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center">
+          <span id="minutes" class="text-3xl sm:text-5xl font-black font-space text-white red-text-glow">00</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 font-bold mt-2">Minutes</span>
+        </div>
+
+        <!-- Seconds -->
+        <div class="bg-black/70 border border-white/10 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center">
+          <span id="seconds" class="text-3xl sm:text-5xl font-black font-space text-brandRed animate-pulse">00</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 font-bold mt-2">Seconds</span>
+        </div>
+      </div>
+
+      <!-- RELEASED ANNOUNCEMENT CONTAINER (Hidden by default, shown on Nov 1) -->
+      <div id="releasedContainer" class="hidden py-8 px-4 flex flex-col items-center justify-center space-y-4">
+        <div class="w-16 h-16 rounded-full bg-brandRed/20 border-2 border-brandRed text-brandRed flex items-center justify-center text-3xl animate-bounce">
+          🔥
+        </div>
+        <h3 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight font-space">
+          THE MUSIC HAS <span class="text-brandRed red-text-glow">RELEASED!</span>
+        </h3>
+        <p class="text-gray-300 max-w-md text-sm sm:text-base font-medium">
+          The wait is over! Stream the official release below or download your copy straight from reThink Our Music.
+        </p>
+        <a href="#musicSection" class="mt-2 inline-flex items-center gap-2 bg-brandRed hover:bg-brandDarkRed text-white font-bold px-8 py-3.5 rounded-full text-sm uppercase tracking-wider transition-all duration-300 shadow-lg shadow-brandRed/40">
+          <i class="fa-solid fa-play"></i> Listen Now
+        </a>
+      </div>
+
+    </div>
+
+    <!-- MUSIC PLAYER & PREVIEW SECTION -->
+    <section id="musicSection" class="w-full glass-card rounded-3xl p-6 sm:p-8 border border-white/10 mb-10">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-white/10">
+        <div>
+          <span class="text-xs font-bold text-brandRed uppercase tracking-widest">Audio Teaser & Player</span>
+          <h3 class="text-2xl font-extrabold text-white font-space mt-0.5">Stream Preview</h3>
+        </div>
+
+        <!-- Custom MP3 File Selector for Admin/Testing -->
+        <div class="flex items-center gap-2 bg-black/60 p-2 rounded-xl border border-white/10 text-xs">
+          <span class="text-gray-400 text-nowrap"><i class="fa-solid fa-upload text-brandRed"></i> Load Local Track:</span>
+          <input type="file" id="audioFileInput" accept="audio/*" class="text-gray-400 file:mr-2 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-brandRed file:text-white hover:file:bg-brandDarkRed cursor-pointer">
+        </div>
+      </div>
+
+      <!-- Active Track Banner -->
+      <div class="mt-6 flex flex-col sm:flex-row items-center gap-6 bg-black/80 p-5 rounded-2xl border border-white/10">
+        <div class="w-20 h-20 bg-brandRed rounded-xl flex items-center justify-center shrink-0 shadow-lg">
+          <i class="fa-solid fa-music text-3xl text-white"></i>
+        </div>
+
+        <div class="flex-grow w-full text-center sm:text-left">
+          <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+            <span class="px-2 py-0.5 rounded bg-brandRed/30 border border-brandRed/40 text-[10px] font-bold text-brandRed uppercase">Single Teaser</span>
+            <span id="trackStatus" class="text-xs text-gray-400 font-semibold">Ready to play</span>
+          </div>
+          <h4 id="trackTitle" class="text-lg font-bold text-white">Harambee Anthem (Official Teaser)</h4>
+          <p id="trackArtist" class="text-xs text-gray-400">reThink Our Music • Lesotho</p>
+
+          <!-- Standard HTML5 Audio Player -->
+          <audio id="mainAudioPlayer" controls class="w-full mt-3 h-10 accent-brandRed rounded-lg">
+            <source src="teaser.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+
+      <!-- Tracklist Container -->
+      <div class="mt-6 space-y-3">
+        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Release Tracklist</h4>
+        
+        <!-- Track 1 -->
+        <div class="flex items-center justify-between p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-colors">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-bold text-gray-500 w-4">01</span>
+            <div>
+              <p class="text-sm font-bold text-white">Rethink Lesotho (Intro)</p>
+              <p class="text-[11px] text-gray-400">02:15 • Produced by Harambee</p>
+            </div>
+          </div>
+          <button onclick="playDemoTrack('Rethink Lesotho (Intro)')" class="text-xs bg-brandRed/20 hover:bg-brandRed border border-brandRed/50 text-white px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-play"></i> Preview
+          </button>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="flex items-center justify-between p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/5 transition-colors">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-bold text-gray-500 w-4">02</span>
+            <div>
+              <p class="text-sm font-bold text-white">Mosotho Soundscape</p>
+              <p class="text-[11px] text-gray-400">03:42 • Harambee All-Stars</p>
+            </div>
+          </div>
+          <button onclick="playDemoTrack('Mosotho Soundscape')" class="text-xs bg-brandRed/20 hover:bg-brandRed border border-brandRed/50 text-white px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-play"></i> Preview
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- PRE-SAVE / EMAIL SUBSCRIPTION SECTION -->
+    <section class="w-full glass-card rounded-3xl p-6 sm:p-10 border border-white/10 text-center mb-10 relative overflow-hidden">
+      <div class="max-w-xl mx-auto space-y-4">
+        <span class="text-xs font-black text-brandRed uppercase tracking-widest">Get Notified</span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white font-space">Be First To Listen On Drop Day</h3>
+        <p class="text-xs sm:text-sm text-gray-300 font-medium">
+          Enter your email address to receive direct download links, VIP listening access, and launch notifications.
+        </p>
+
+        <!-- Subscription Input -->
+        <form id="subscribeForm" onsubmit="handleSubscribe(event)" class="pt-2">
+          <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+            <input type="email" id="emailInput" required placeholder="Enter your email address" class="flex-grow bg-black/80 border border-white/20 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandRed transition-colors">
+            <button type="submit" class="bg-brandRed hover:bg-brandDarkRed text-white font-bold px-6 py-3 rounded-xl text-sm uppercase tracking-wider transition-all duration-300 shadow-md">
+              Pre-Save
+            </button>
+          </div>
+        </form>
+        
+        <!-- Feedback Message -->
+        <p id="subMsg" class="hidden text-xs text-green-400 font-bold mt-2">
+          ✨ You are on the VIP drop list! We'll email you at midnight.
+        </p>
+      </div>
+    </section>
+
+    <!-- PAYMENT PARTNERS & BADGES -->
+    <div class="w-full text-center space-y-4 mb-6">
+      <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">
+        Supported Local & Global Payment Gateways
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 opacity-90">
+        <!-- MasterCard Badge -->
+        <div class="bg-white/10 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold text-gray-200 flex items-center gap-2">
+          <i class="fa-brands fa-cc-mastercard text-red-500 text-lg"></i> MasterCard
+        </div>
+        <!-- VISA Badge -->
+        <div class="bg-white/10 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold text-gray-200 flex items-center gap-2">
+          <i class="fa-brands fa-cc-visa text-blue-400 text-lg"></i> VISA
+        </div>
+        <!-- PayPal Badge -->
+        <div class="bg-white/10 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold text-gray-200 flex items-center gap-2">
+          <i class="fa-brands fa-paypal text-sky-400 text-lg"></i> PayPal
+        </div>
+        <!-- EcoCash Badge -->
+        <div class="bg-white/10 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold text-gray-200 flex items-center gap-2">
+          <i class="fa-solid fa-mobile-screen-button text-green-400 text-lg"></i> EcoCash
+        </div>
+        <!-- M-Pesa Badge -->
+        <div class="bg-white/10 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold text-gray-200 flex items-center gap-2">
+          <i class="fa-solid fa-wallet text-red-400 text-lg"></i> M-Pesa
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full border-t border-white/10 bg-black/90 py-6 text-center text-xs text-gray-500">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; 2026 <span class="text-white font-bold">reThink Our Music</span>. Powered by Harambee. All rights reserved.</p>
+      <p class="text-gray-400">Maseru, Lesotho • Africa</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // TARGET DATE: November 1, 2026 at 00:00:00 SAST (Midnight after Oct 31)
+    const releaseTargetDate = new Date("2026-11-01T00:00:00+02:00").getTime();
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+
+    const timerContainer = document.getElementById("timerContainer");
+    const releasedContainer = document.getElementById("releasedContainer");
+    const countdownHeading = document.getElementById("countdownHeading");
+    const targetSubtext = document.getElementById("targetSubtext");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = releaseTargetDate - now;
+
+      // If November 1 has arrived!
+      if (distance <= 0) {
+        // Toggle interface states
+        timerContainer.classList.add("hidden");
+        releasedContainer.classList.remove("hidden");
+        
+        countdownHeading.innerText = "🚀 OFFICIAL RELEASE IS LIVE";
+        countdownHeading.className = "text-xs sm:text-sm font-black uppercase tracking-widest text-green-400 mb-1";
+        
+        targetSubtext.innerHTML = "<span class='text-white font-bold'>The album is now available worldwide!</span>";
+        return;
+      }
+
+      // Time calculations
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Render to DOM with padding zero
+      daysEl.innerText = days < 10 ? '0' + days : days;
+      hoursEl.innerText = hours < 10 ? '0' + hours : hours;
+      minutesEl.innerText = minutes < 10 ? '0' + minutes : minutes;
+      secondsEl.innerText = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    // Initialize Timer Loop
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Local MP3 File Loader Handler
+    const audioFileInput = document.getElementById('audioFileInput');
+    const mainAudioPlayer = document.getElementById('mainAudioPlayer');
+    const trackTitle = document.getElementById('trackTitle');
+    const trackArtist = document.getElementById('trackArtist');
+    const trackStatus = document.getElementById('trackStatus');
+
+    audioFileInput.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const fileURL = URL.createObjectURL(file);
+        mainAudioPlayer.src = fileURL;
+        trackTitle.innerText = file.name.replace(/\.[^/.]+$/, "");
+        trackArtist.innerText = "Uploaded Local Track";
+        trackStatus.innerText = "Custom File Loaded";
+        mainAudioPlayer.play();
+      }
+    });
+
+    // Tracklist Preview Switcher
+    function playDemoTrack(name) {
+      trackTitle.innerText = name;
+      trackArtist.innerText = "reThink Our Music • Demo Stream";
+      trackStatus.innerText = "Playing Teaser";
+      // Restarts current teaser player for demo purposes
+      mainAudioPlayer.currentTime = 0;
+      mainAudioPlayer.play();
+    }
+
+    // Email Waitlist Form Handler
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const email = document.getElementById("emailInput").value;
+      if (email) {
+        document.getElementById("subMsg").classList.remove("hidden");
+        document.getElementById("emailInput").value = "";
+      }
+    }
+  </script>
+</body>
+</html>
